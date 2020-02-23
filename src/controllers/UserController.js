@@ -15,17 +15,18 @@ module.exports = {
   },
 
   async clonedb(req, res) {
-    let i = 0;
-    let buffer = [];
-    let j = 0;
-    // set the csv file location
-    const csvfile = `${__dirname}/../../users.csv`;
+    let i = 0; // iterator buffer
+    let buffer = []; // buffer to .bulkCreate function
+    let j = 0; // global iterator
+    const csvfile = `${__dirname}/../../users.csv`; // set the csv file location
     // read objects of csv by rows
     await fs.createReadStream(csvfile).pipe(csv.parse({ headers: true })).on('data', (row) => {
+      // get user row
       const newuser = {
         name: row.name,
         email: row.email,
       };
+      // set buffer
       if (i >= 0 && i < 100000 && j < 9000000) {
         buffer.push(newuser);
       } else if (i === 100000 && j < 9000000) {
@@ -33,12 +34,15 @@ module.exports = {
         buffer = [];
         i = 0;
       }
+      // next user
       j += 1;
       i += 1;
-      if (j === 9999999999) {
+      // if no users on csv
+      if (j === 10000000000) {
         return res.status(200).json({ message: 'Db cloned' });
       }
-    }).then(() => res.status(200).json({ message: 'Db cloning' }));
+    });
+    return res.status(200).json({ message: 'Db cloning' });
   },
 
   async showusers(req, res) {

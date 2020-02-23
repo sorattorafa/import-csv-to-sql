@@ -27,8 +27,9 @@
 7. Rode `yarn dev` para iniciar o servidor. 
 8. Chame a rota (https://localhost:3333/userscreatedb) para clonar o arquivo .csv na raiz do projeto; 
 9. Enquanto a rota (8) está carregando os dados pro SQL:  
-9.1. Pagine os dados utilizando a rota (https://localhost:3333/userspag/1),
+9.1. Pagine os dados utilizando a rota (https://localhost:3333/userspag/1). Esta rota retorna os dados páginados em conjunto com informações como quantidade total de usuários e páginas. 
+10. Chame a rota (https://localhost:3333/users/:id) onde o id é o número do usuário criado.
 
 ## 📝 Licença
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 ---
