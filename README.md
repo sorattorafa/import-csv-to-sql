@@ -30,5 +30,5 @@
 9.1. Pagine os dados utilizando a rota (https://localhost:3333/userspag/1),
 
 ## 📝 Licença
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 ---
