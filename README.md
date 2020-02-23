@@ -30,7 +30,9 @@
 9.1. Pagine os dados utilizando a rota (https://localhost:3333/userspag/1).  
 9.1.1. Esta rota retorna os dados páginados em conjunto com informações em tempo real como a quantidade total de usuários e páginas criados até o momento, caso a rota 8 não tenha terminado sua execução de cadastro por completo está rota mostra os dados já inseridos no banco. 
 10. Para visualizar um único usuário: Chame a rota (https://localhost:3333/users/:id) onde o id é o número do usuário criado. 
-11. Esse usuário pode estar na lista de preferência 1,2 ou 1 e 2, para atualzizar sua lista de prioridade basta chamar a rota (https://localhost:3333/user/:id) passando o id do usuário e um body com o atributo list que aceita os seguintes valores: ("1","2","1, 2"), o último valor significa que o usuário está presente nas duas listas de prioridade.
+11. Esse usuário pode estar na lista de preferência 1,2 ou 1 e 2, para atualzizar sua lista de prioridade basta chamar a rota (https://localhost:3333/user/:id) passando o id do usuário e um body com o atributo list que aceita os seguintes valores: ("1","2","1, 2"), o último valor significa que o usuário está presente nas duas listas de prioridade. 
+
+12.Todas as rotas podem ser testadas com o comando `yarn test`, exceto a rota de clonar o banco de dados que necessita de mais tempo para ser executada. 
 
 ## 📝 Licença
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
