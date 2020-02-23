@@ -26,7 +26,8 @@
 6. Rode `yarn sequelize db:migrate` para executar as migrations;
 7. Rode `yarn dev` para iniciar o servidor. 
 8. Chame a rota (https://localhost:3333/userscreatedb) para clonar o arquivo .csv na raiz do projeto; 
-9. Pagine os dados utilizando a rota (https://localhost:3333/userspag/1), como 10 bilhões dividido por 20 é 500.000 então teremos 500 mil páginas que podem ser chamadas no req.params.id; 
+9. Enquanto a rota (8) está carregando os dados pro SQL:  
+9.1. Pagine os dados utilizando a rota (https://localhost:3333/userspag/1),
 
 ## 📝 Licença
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.

@@ -21,8 +21,7 @@ module.exports = {
     // set the csv file location
     const csvfile = `${__dirname}/../../users.csv`;
     // read objects of csv by rows
-    fs.createReadStream(csvfile).pipe(csv.parse({ headers: true })).on('data', (row) => {
-      console.log('Total users:', j);
+    await fs.createReadStream(csvfile).pipe(csv.parse({ headers: true })).on('data', (row) => {
       const newuser = {
         name: row.name,
         email: row.email,
@@ -36,7 +35,10 @@ module.exports = {
       }
       j += 1;
       i += 1;
-    }).then(() => res.status(200).json({ message: `Db cloned with ${j} users` }));
+      if (j === 9999999999) {
+        return res.status(200).json({ message: 'Db cloned' });
+      }
+    }).then(() => res.status(200).json({ message: 'Db cloning' }));
   },
 
   async showusers(req, res) {
