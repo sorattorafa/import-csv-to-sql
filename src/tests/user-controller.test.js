@@ -11,8 +11,8 @@ beforeEach(async () => {
   userId = id;
 });
 
-afterEach(async () => {
-  await User.destroy({
+afterEach(() => {
+  User.destroy({
     where: {
       id: userId,
     },
@@ -34,20 +34,11 @@ describe('Teste para rota GET: /userspag/:id', () => {
     expect(res.status).toBe(200);
     expect(res.body.data).not.toBeNull();
   });
-});
-
-
-describe('Teste para rota POST: /users', () => {
-  test('Testa o caso de sucesso para esta rota', async () => {
-    const res = await request(app).post('/users').send({
-      name: 'Test User',
-      email: 'valid_email@email.com.br',
-    });
-    expect(res.status).toBe(201);
-    expect(res.body.data).not.toBeNull();
+  test('Testa o caso de fracasso para esta rota', async () => {
+    const res = await request(app).get('/userspag/');
+    expect(res.status).toBe(404);
   });
 });
-
 
 describe('Teste para rota GET: /user/:id', () => {
   test('Testa o caso de sucesso para esta rota', async () => {
