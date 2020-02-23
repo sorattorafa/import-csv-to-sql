@@ -1,9 +1,7 @@
 const Users = require('../models/Users');
-// const knex = require('../config/knex');
 const fs = require('fs');
 const csv = require('fast-csv');
 const validator = require('validator');
-// const knex = require('../config/knex');
 const { calculateLimitAndOffset, paginate } = require('paginate-info');
 
 module.exports = {

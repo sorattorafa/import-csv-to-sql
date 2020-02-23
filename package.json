@@ -9,7 +9,6 @@
   "dependencies": {
     "express": "^4.17.1",
     "fast-csv": "^4.1.1",
-    "knex": "^0.20.1",
     "mysql2": "^2.1.0",
     "paginate-info": "^1.0.4",
     "pg": "^7.12.1",
