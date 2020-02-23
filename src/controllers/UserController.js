@@ -59,6 +59,6 @@ module.exports = {
     const { limit, offset } = calculateLimitAndOffset(id, 20);
     const { rows, count } = await Users.findAndCountAll({ limit, offset });
     const infos = paginate(id, count, rows, 20);
-    return res.json({ rows, infos });
+    return res.json({ infos, rows });
   },
 };
