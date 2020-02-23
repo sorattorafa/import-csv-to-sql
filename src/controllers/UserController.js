@@ -9,7 +9,7 @@ module.exports = {
     const { name, email } = req.body;
     if (validator.isEmail(email) === true) {
       const user = await Users.create({ name, email });
-      return res.json(user);
+      return res.status(201).json(user);
     }
     return res.status(400).json({ message: 'Invalid email error' });
   },
@@ -51,7 +51,10 @@ module.exports = {
         id: req.params.id,
       },
     });
-    return res.json(users);
+    if (!users) {
+      return res.status(400).json({ message: 'No user found' });
+    }
+    return res.status(200).json(users);
   },
 
   async index(req, res) {
@@ -59,7 +62,7 @@ module.exports = {
     const { limit, offset } = calculateLimitAndOffset(id, 20);
     const { rows, count } = await Users.findAndCountAll({ limit, offset });
     const infos = paginate(id, count, rows, 20);
-    return res.json({ infos, rows });
+    return res.status(200).json({ infos, rows });
   },
 
   async updateuser(req, res) {

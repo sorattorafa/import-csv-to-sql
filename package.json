@@ -4,16 +4,19 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "dev": "nodemon src/server.js"
+    "dev": "nodemon src/server.js", 
+    "test": "jest"
   },
   "dependencies": {
     "express": "^4.17.1",
     "fast-csv": "^4.1.1",
+    "jest": "^25.1.0",
     "mysql2": "^2.1.0",
     "paginate-info": "^1.0.4",
     "pg": "^7.12.1",
     "pg-hstore": "^2.3.3",
     "sequelize": "^5.19.6",
+    "supertest": "^4.0.2",
     "validator": "^12.2.0"
   },
   "devDependencies": {
