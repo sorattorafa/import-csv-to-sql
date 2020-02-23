@@ -61,4 +61,19 @@ module.exports = {
     const infos = paginate(id, count, rows, 20);
     return res.json({ infos, rows });
   },
+
+  async updateuser(req, res) {
+    const user = await Users.update(
+      { list: req.body.list },
+      {
+        where: { id: req.params.id },
+      },
+    );
+    if (!user) {
+      return res.status(400).json({ message: `Cannot find ${req.params.id}user` });
+    }
+    const updateduser = await Users.findAll({ where: { id: req.params.id } });
+    return res.status(201).json({ updateduser });
+  },
+
 };
