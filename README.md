@@ -16,7 +16,7 @@
 ## Instalação 
 
 1. Faça um clone desse repositório;
-2. Entre na pasta `backend-test/`;
+2. Entre na pasta `import-csv-to-sql/`;
 3. Rode `yarn` para instalar as dependências;
 4. Altere as credencias dentro de `/src/config/database.js`;
 5. Rode `yarn sequelize db:create` para criar o banco de dados;
