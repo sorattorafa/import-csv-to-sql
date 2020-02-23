@@ -11,8 +11,8 @@ beforeEach(async () => {
   userId = id;
 });
 
-afterEach(() => {
-  User.destroy({
+afterEach(async () => {
+  await User.destroy({
     where: {
       id: userId,
     },
