@@ -14,7 +14,6 @@
 - [EXPRESS](https://expressjs.com/pt-br/)
 
  ## ✋🏻Auxiliares  
-- [Knex](http://knexjs.org/)  
 - [ESLINT](https://eslint.org/)  
 
 ## 🔥 Instalação e execução
