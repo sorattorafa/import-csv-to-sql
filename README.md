@@ -33,7 +33,7 @@
 11. Esse usuário pode estar na lista de preferência 1,2 ou 1 e 2, para atualzizar sua lista de prioridade basta chamar a rota (https://localhost:3333/user/:id) passando o id do usuário e um body com o atributo list que aceita os seguintes valores: ("1","2","1, 2"), o último valor significa que o usuário está presente nas duas listas de prioridade. 
  
 ## Testes 
-12.Todas as rotas podem ser testadas com o comando `yarn test`, exceto a rota de clonar o banco de dados que necessita de mais tempo para ser executada. 
+12.Após realizada a etapa de instalação e migrações das tabelas, todas as rotas podem ser testadas com o comando `yarn test`. Exceto a rota de clonar o banco de dados que necessita de mais tempo para ser executada. 
 
 ## 📝 Licença
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
