@@ -13,7 +13,7 @@
  ## ✋🏻Auxiliares  
 - [ESLINT](https://eslint.org/)  
 
-## Instalação 
+## Instalação  
 
 1. Faça um clone desse repositório;
 2. Entre na pasta `import-csv-to-sql/`;
@@ -21,7 +21,7 @@
 4. Altere as credencias dentro de `/src/config/database.js`;
 5. Rode `yarn sequelize db:create` para criar o banco de dados;
 6. Rode `yarn sequelize db:migrate` para executar as migrations; 
-
+7. Faça o download do arquivo [users.csv.gz](https://drive.google.com/file/d/1ROkcATlFjPvNCQ2Aiko12ajmOnk29-gR/view?usp=sharing) e descomprima-o na raiz do projeto.
 ## Execução 
 
 7. Rode `yarn dev` para iniciar o servidor. 
