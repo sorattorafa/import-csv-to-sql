@@ -8,10 +8,17 @@ module.exports = {
   async store(req, res) {
     const { name, email } = req.body;
     if (validator.isEmail(email) === true) {
-      const user = await Users.create({ name, email });
-      return res.status(201).json(user);
+      const signup = new Promise(async (resolve, reject) => {
+        const user = await Users.create({ name, email });
+        if (!user) {
+          reject(res.status(400).json({ message: 'Invalid email error' }));
+        }
+        resolve(res.status(201).json(user));
+      });
+      signup.then(resultado => resultado).catch((error) => {
+        console.log(error);
+      });
     }
-    return res.status(400).json({ message: 'Invalid email error' });
   },
 
   async clonedb(req, res) {
